@@ -1,3 +1,5 @@
+# Copyright (c) 2025 ksg-dev. Licensed under the MIT License. See LICENSE for details.
+
 from setuptools import setup, find_packages
 
 with open("README.md", "r", encoding="utf-8") as fh:
