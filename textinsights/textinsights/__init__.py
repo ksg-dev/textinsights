@@ -1,0 +1,6 @@
+"""TextInsights: A package for text analysis and visualization"""
+
+from .analyzer import TextAnalyzer
+from .stats import word_frequency, sentiment_score
+
+__version__ = "0.1.0"
