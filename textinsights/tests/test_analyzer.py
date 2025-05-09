@@ -52,6 +52,7 @@ class TestTextAnalyzer:
 
         # Basic case
         analyzer = TextAnalyzer("four nine")
+        # I expect to have to change this assertion to 4, but leaving for now for testing
         assert analyzer.avg_word_length() == 4.5
 
         # Empty text
