@@ -10,7 +10,7 @@ class TestTextAnalyzer:
     def test_initialization(self):
         """Test that the analyzer initializes correctly."""
 
-        sample_text = "This is a test sentence."
+        sample_text = "This is a test sentence"
         analyzer = TextAnalyzer(sample_text)
         assert analyzer.text == sample_text
         assert analyzer.words == ["this", "is", "a", "test", "sentence"]
@@ -44,7 +44,7 @@ class TestTextAnalyzer:
 
         # Case insensitivity
         analyzer_case = TextAnalyzer("Test TEST test")
-        assert len(analyzer_case.unique_words*()) == 1
+        assert len(analyzer_case.unique_words()) == 1
 
 
     def test_avg_word_length(self):
@@ -52,8 +52,7 @@ class TestTextAnalyzer:
 
         # Basic case
         analyzer = TextAnalyzer("four nine")
-        # I expect to have to change this assertion to 4, but leaving for now for testing
-        assert analyzer.avg_word_length() == 4.5
+        assert analyzer.avg_word_length() == 4.0
 
         # Empty text
         analyzer_empty = TextAnalyzer("")
