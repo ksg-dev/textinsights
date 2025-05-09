@@ -8,10 +8,14 @@ def word_frequency(text):
     """Calculate frequency distribution of words.
     
     Args:
-        text (str): Input text
+        text (str): The text to analyze
 
     Returns:
         Counter: Word frequency counts
+
+    Example:
+        >>> word_frequency("apple apple banana banana banana coconut coconut orange")
+        Counter({'banana': 3, 'apple': 2, 'coconut': 2, 'orange': 1}) 
     
     """
     words = text.lower().split()
@@ -19,17 +23,28 @@ def word_frequency(text):
 
 
 def sentiment_score(text, positive_words=None, negative_words=None):
-    """Simple sentiment analysis based on word lists.
+    """Calculate a sentiment score for the given text.
+    
+    The sentiment score is a value between -1.0 (completely negative)
+    and 1.0 (completely positive), with 0.0 representing neutral sentiment.
     
     Args:
-        text (str): Input text
-        positive_words (list): List of positive words
-        negative_words (list): List of negative words
-
-    Returns:
-        float: Sentiment score between -1 and 1
+        text (str): The text to analyze
+        positive_words (list, optional): List of positive words to use.
+            Defaults to a basic set of positive words.
+        negative_words (list, optional): List of negative words to use.
+            Defaults to a basic set of negative words.
     
+    Returns:
+        float: A sentiment score between -1.0 and 1.0
+    
+    Example:
+        >>> sentiment_score("I love this product!")
+        1.0
+        >>> sentiment_score("I hate this product!")
+        -1.0
     """
+
     if positive_words is None:
         positive_words = ['good', 'great', 'excellent', 'happy', 'like', 'love']
 

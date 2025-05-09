@@ -11,6 +11,9 @@ class TextAnalyzer:
         Args:
             text (str): The text to analyze
 
+        Example:
+            >>> analyzer = TextAnalyzer("Wow this bon bon is delicious")
+
         """
         self.text = text
         self.words = text.lower().split()
@@ -21,6 +24,10 @@ class TextAnalyzer:
         Returns:
             int: Total word count
 
+        Example:
+            >>> analyzer.word_count()
+            6
+
         """
         return len(self.words)
     
@@ -29,6 +36,10 @@ class TextAnalyzer:
         
         Returns:
             set: Set of unique words
+
+        Example:
+            >>> analyzer.unique_words()
+            {'this', 'delicious', 'is', 'wow', 'bon'}
         
         """
         return set(self.words)
@@ -38,6 +49,10 @@ class TextAnalyzer:
         
         Returns:
             float: Average length of words
+
+        Example:
+            >>> analyzer.avg_word_length()
+            4.0
         
         """
         if not self.words:
