@@ -1,9 +1,11 @@
-# Copyright (c) 2025 ksg-dev. Licensed under the MIT License. See LICENSE for details.
+# Copyright (c) 2025 ksg-dev. Licensed under the MIT License.
+# See LICENSE for details.
 
-import pytest 
+import pytest
 from textinsights.analyzer import TextAnalyzer
 
 
+@pytest.fixture(scope="module")
 class TestTextAnalyzer:
     """Test suite for the TextAnalyzer class."""
 
@@ -30,7 +32,6 @@ class TestTextAnalyzer:
         analyzer_spaces = TextAnalyzer("Word   with   extra   spaces")
         assert analyzer_spaces.word_count() == 4
 
-
     def test_unique_words(self):
         """Test the unique_words method."""
 
@@ -45,7 +46,6 @@ class TestTextAnalyzer:
         # Case insensitivity
         analyzer_case = TextAnalyzer("Test TEST test")
         assert len(analyzer_case.unique_words()) == 1
-
 
     def test_avg_word_length(self):
         """Test avg_word_length method."""
@@ -64,4 +64,3 @@ class TestTextAnalyzer:
         # For now, just test that it returns a reasonable value
         avg_len = analyzer_punct.avg_word_length()
         assert 3.0 <= avg_len <= 6.0
-
