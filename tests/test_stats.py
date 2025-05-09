@@ -9,16 +9,41 @@ from textinsights.stats import word_frequency, sentiment_score
 class TestWordFrequency:
     """Test suite for the word_frequency function."""
 
-    def test_basic_frequency(self):
-        """Test basic word frequency counting."""
+    @pytest.fixture
+    def sample_text(self):
+        """Fixture providing sample text for word frequency testing."""
+        return "apple banana apple orange banana apple"
 
-        text = "apple banana apple orange banana apple"
-        freq = word_frequency(text)
+    @pytest.fixture
+    def complex_text(self):
+        """Fixture providing more complex text with puntuation and cases."""
+        return """The quick brown fox jumps over the lazy dog.
+        The quick brown fox is quick indeed! Fox fox FOX."""
+
+    @pytest.fixture(params=[
+        "apple",
+        "apple apple",
+        "apple banana apple",
+        ""
+    ])
+    def various_texts(self, request):
+        """Parametrized fixture providing different text examples."""
+        return request.param
+
+    def test_basic_frequency(self, sample_text):
+        """Test basic word frequency counting using fixture."""
+
+        freq = word_frequency(sample_text)
         assert isinstance(freq, Counter)
         assert freq["apple"] == 3
         assert freq["banana"] == 2
         assert freq["orange"] == 1
 
+    @pytest.mark.parametrize("text,expected_counts", [
+        ])
+
+    
+    
     def test_case_insensitivity(self):
         """Test that word frequency is case-insensitive."""
 
