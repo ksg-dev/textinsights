@@ -137,7 +137,7 @@ class TestSentimentScore:
         return ['bad', 'terrible', 'awful', 'sad', 'hate', 'dislike']
 
     @pytest.fixture
-    def custom_word_lists(self):
+    def custom_words_lists(self):
         """Fixture providing custom positive and negative word lists."""
         return {
             'positive': ['amazing', 'brilliant', 'wonderful'],

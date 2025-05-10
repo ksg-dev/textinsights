@@ -79,7 +79,7 @@ class TestTextAnalyzer:
         assert len(analyzer.unique_words()) == expected_unique
 
     @pytest.mark.parametrize("text,expected_avg", [
-        ("four nine", 4.5),
+        ("four nine", 4.0),
         ("a bb ccc", 2.0),
         ("", 0),
         ("equal equal equal", 5.0),
