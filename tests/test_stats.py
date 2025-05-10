@@ -20,12 +20,7 @@ class TestWordFrequency:
         return """The quick brown fox jumps over the lazy dog.
         The quick brown fox is quick indeed! Fox fox FOX."""
 
-    @pytest.fixture(params=[
-        "apple",
-        "apple apple",
-        "apple banana apple",
-        ""
-    ])
+    @pytest.fixture(params=["apple", "apple apple", "apple banana apple", ""])
     def various_texts(self, request):
         """Parametrized fixture providing different text examples."""
         return request.param
@@ -39,11 +34,7 @@ class TestWordFrequency:
         assert freq["banana"] == 2
         assert freq["orange"] == 1
 
-    @pytest.mark.parametrize("text,expected_counts", [
-        ])
-
-    
-    
+    @pytest.mark.parametrize("text,expected_counts", [])
     def test_case_insensitivity(self):
         """Test that word frequency is case-insensitive."""
 
